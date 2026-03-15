@@ -5,7 +5,7 @@ import 'meditation_player_screen.dart';
 import 'break_completion_screen.dart';
 
 class RecoveryHubScreen extends StatelessWidget {
-  const RecoveryHubScreen({Key? key}) : super(key: key);
+  const RecoveryHubScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -147,7 +147,7 @@ class RecoveryHubScreen extends StatelessWidget {
                       width: 40,
                       height: 40,
                       decoration: BoxDecoration(
-                        color: AppTheme.primaryColor.withOpacity(0.1),
+                        color: AppTheme.primaryColor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Icon(icon, color: AppTheme.primaryColor),
@@ -197,10 +197,10 @@ class RecoveryHubScreen extends StatelessWidget {
             width: 80,
             height: 80,
             decoration: BoxDecoration(
-              color: AppTheme.primaryColor.withOpacity(0.05),
+              color: AppTheme.primaryColor.withValues(alpha: 0.05),
               borderRadius: BorderRadius.circular(12),
             ),
-            child: Icon(icon, size: 40, color: AppTheme.primaryColor.withOpacity(0.3)),
+            child: Icon(icon, size: 40, color: AppTheme.primaryColor.withValues(alpha: 0.3)),
           ),
         ],
       ),

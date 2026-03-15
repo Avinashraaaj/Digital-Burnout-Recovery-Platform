@@ -4,7 +4,7 @@ import '../providers/app_provider.dart';
 import '../utils/app_theme.dart';
 
 class BreakCompletionScreen extends StatefulWidget {
-  const BreakCompletionScreen({Key? key}) : super(key: key);
+  const BreakCompletionScreen({super.key});
 
   @override
   State<BreakCompletionScreen> createState() => _BreakCompletionScreenState();
@@ -43,7 +43,7 @@ class _BreakCompletionScreenState extends State<BreakCompletionScreen> {
                   const SizedBox(height: 16),
                   Container(
                     width: 80, height: 80,
-                    decoration: BoxDecoration(color: AppTheme.primaryColor.withOpacity(0.1), shape: BoxShape.circle),
+                    decoration: BoxDecoration(color: AppTheme.primaryColor.withValues(alpha: 0.1), shape: BoxShape.circle),
                     child: Icon(Icons.check_circle, size: 40, color: AppTheme.primaryColor),
                   ),
                   const SizedBox(height: 24),
@@ -66,14 +66,14 @@ class _BreakCompletionScreenState extends State<BreakCompletionScreen> {
                           decoration: BoxDecoration(
                             color: isDark ? const Color(0xFF1E293B) : Colors.white,
                             borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: sel ? AppTheme.primaryColor : AppTheme.primaryColor.withOpacity(0.1), width: sel ? 2 : 1),
+                            border: Border.all(color: sel ? AppTheme.primaryColor : AppTheme.primaryColor.withValues(alpha: 0.1), width: sel ? 2 : 1),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Container(
                                 width: 48, height: 48,
-                                decoration: BoxDecoration(shape: BoxShape.circle, color: sel ? AppTheme.primaryColor.withOpacity(0.2) : AppTheme.primaryColor.withOpacity(0.05)),
+                                decoration: BoxDecoration(shape: BoxShape.circle, color: sel ? AppTheme.primaryColor.withValues(alpha: 0.2) : AppTheme.primaryColor.withValues(alpha: 0.05)),
                                 child: Icon(a['icon'] as IconData, color: AppTheme.primaryColor),
                               ),
                               const SizedBox(height: 12),
@@ -100,7 +100,7 @@ class _BreakCompletionScreenState extends State<BreakCompletionScreen> {
                       Navigator.pop(context);
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Break logged: $_selectedActivity'), backgroundColor: AppTheme.primaryColor));
                     } : null,
-                    style: ElevatedButton.styleFrom(backgroundColor: AppTheme.primaryColor, foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)), disabledBackgroundColor: AppTheme.primaryColor.withOpacity(0.3)),
+                    style: ElevatedButton.styleFrom(backgroundColor: AppTheme.primaryColor, foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)), disabledBackgroundColor: AppTheme.primaryColor.withValues(alpha: 0.3)),
                     child: const Text('Log Break', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   ),
                 ),

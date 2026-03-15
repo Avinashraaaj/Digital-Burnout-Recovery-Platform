@@ -4,7 +4,7 @@ import '../widgets/line_chart_widget.dart';
 import '../widgets/app_usage_tile.dart';
 
 class ActivityInsightsScreen extends StatefulWidget {
-  const ActivityInsightsScreen({Key? key}) : super(key: key);
+  const ActivityInsightsScreen({super.key});
 
   @override
   State<ActivityInsightsScreen> createState() => _ActivityInsightsScreenState();
@@ -91,7 +91,7 @@ class _ActivityInsightsScreenState extends State<ActivityInsightsScreen> {
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                           decoration: BoxDecoration(
-                            color: AppTheme.danger.withOpacity(0.1),
+                            color: AppTheme.danger.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Row(
@@ -322,7 +322,7 @@ class _ActivityInsightsScreenState extends State<ActivityInsightsScreen> {
         heightFactor: heightFraction,
         child: Container(
           decoration: BoxDecoration(
-            color: active ? AppTheme.primaryColor : AppTheme.primaryColor.withOpacity(0.2),
+            color: active ? AppTheme.primaryColor : AppTheme.primaryColor.withValues(alpha: 0.2),
             borderRadius: const BorderRadius.vertical(top: Radius.circular(2)),
           ),
         ),
@@ -345,7 +345,7 @@ class _ActivityInsightsScreenState extends State<ActivityInsightsScreen> {
           borderRadius: BorderRadius.circular(4),
           child: LinearProgressIndicator(
             value: progress,
-            backgroundColor: Colors.grey.withOpacity(0.2),
+            backgroundColor: Colors.grey.withValues(alpha: 0.2),
             valueColor: AlwaysStoppedAnimation(color),
             minHeight: 6,
           ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../utils/app_theme.dart';
 
 class BreathingExerciseScreen extends StatefulWidget {
-  const BreathingExerciseScreen({Key? key}) : super(key: key);
+  const BreathingExerciseScreen({super.key});
 
   @override
   State<BreathingExerciseScreen> createState() => _BreathingExerciseScreenState();
@@ -13,7 +13,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
   late AnimationController _breathController;
   late Animation<double> _scaleAnimation;
   Timer? _timer;
-  int _totalSeconds = 120; // 2 min
+  final int _totalSeconds = 120; // 2 min
   int _elapsed = 0;
   bool _isRunning = true;
   int _phaseIndex = 0;
@@ -102,8 +102,8 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                         width: 192, height: 192,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [AppTheme.primaryColor, AppTheme.primaryColor.withOpacity(0.4)]),
-                          boxShadow: [BoxShadow(color: AppTheme.primaryColor.withOpacity(0.2), blurRadius: 40, spreadRadius: 8)],
+                          gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [AppTheme.primaryColor, AppTheme.primaryColor.withValues(alpha: 0.4)]),
+                          boxShadow: [BoxShadow(color: AppTheme.primaryColor.withValues(alpha: 0.2), blurRadius: 40, spreadRadius: 8)],
                         ),
                         child: Center(child: Text(_phases[_phaseIndex], style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold))),
                       ),
@@ -142,7 +142,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                       },
                       child: Container(
                         width: 72, height: 72,
-                        decoration: BoxDecoration(shape: BoxShape.circle, color: AppTheme.primaryColor, boxShadow: [BoxShadow(color: AppTheme.primaryColor.withOpacity(0.3), blurRadius: 16, offset: const Offset(0, 4))]),
+                        decoration: BoxDecoration(shape: BoxShape.circle, color: AppTheme.primaryColor, boxShadow: [BoxShadow(color: AppTheme.primaryColor.withValues(alpha: 0.3), blurRadius: 16, offset: const Offset(0, 4))]),
                         child: Icon(_isRunning ? Icons.pause : Icons.play_arrow, size: 40, color: Colors.white),
                       ),
                     ),
@@ -156,7 +156,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                   height: 52,
                   child: OutlinedButton(
                     onPressed: () => Navigator.pop(context),
-                    style: OutlinedButton.styleFrom(side: BorderSide(color: AppTheme.primaryColor.withOpacity(0.2), width: 2), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+                    style: OutlinedButton.styleFrom(side: BorderSide(color: AppTheme.primaryColor.withValues(alpha: 0.2), width: 2), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
                     child: Text('End Session Early', style: TextStyle(color: AppTheme.primaryColor, fontWeight: FontWeight.bold, fontSize: 16)),
                   ),
                 ),

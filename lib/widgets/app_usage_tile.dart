@@ -8,13 +8,13 @@ class AppUsageTile extends StatelessWidget {
   final Widget iconContent; // Either Icon or Text for the logo
 
   const AppUsageTile({
-    Key? key,
+    super.key,
     required this.appName,
     required this.category,
     required this.usageTime,
     required this.iconBgColor,
     required this.iconContent,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

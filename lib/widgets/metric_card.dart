@@ -10,7 +10,7 @@ class MetricCard extends StatelessWidget {
   final Color subtitleColor;
 
   const MetricCard({
-    Key? key,
+    super.key,
     required this.icon,
     required this.iconColor,
     required this.title,
@@ -18,7 +18,7 @@ class MetricCard extends StatelessWidget {
     this.subValue = '',
     required this.subtitle,
     required this.subtitleColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -7,10 +7,10 @@ class WeeklyBarChart extends StatelessWidget {
   final double maxY;
 
   const WeeklyBarChart({
-    Key? key,
+    super.key,
     required this.values,
     this.maxY = 100,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class WeeklyBarChart extends StatelessWidget {
               barRods: [
                 BarChartRodData(
                   toY: values[i],
-                  color: AppTheme.primaryColor.withOpacity(0.2 + (opacity * 0.8)),
+                  color: AppTheme.primaryColor.withValues(alpha: 0.2 + (opacity * 0.8)),
                   width: 24,
                   borderRadius: const BorderRadius.vertical(top: Radius.circular(6)),
                 ),

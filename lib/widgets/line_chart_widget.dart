@@ -7,10 +7,10 @@ class LineChartWidget extends StatelessWidget {
   final double maxY;
 
   const LineChartWidget({
-    Key? key,
+    super.key,
     required this.values,
     this.maxY = 10,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -70,8 +70,8 @@ class LineChartWidget extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    AppTheme.primaryColor.withOpacity(0.2),
-                    AppTheme.primaryColor.withOpacity(0.0),
+                    AppTheme.primaryColor.withValues(alpha: 0.2),
+                    AppTheme.primaryColor.withValues(alpha: 0.0),
                   ],
                 ),
               ),

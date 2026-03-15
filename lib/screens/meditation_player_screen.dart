@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../utils/app_theme.dart';
 
 class MeditationPlayerScreen extends StatefulWidget {
-  const MeditationPlayerScreen({Key? key}) : super(key: key);
+  const MeditationPlayerScreen({super.key});
 
   @override
   State<MeditationPlayerScreen> createState() => _MeditationPlayerScreenState();
@@ -79,12 +79,12 @@ class _MeditationPlayerScreenState extends State<MeditationPlayerScreen> {
                         width: 200, height: 200,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [AppTheme.primaryColor.withOpacity(0.4), const Color(0xFF2DD4BF).withOpacity(0.3)]),
-                          boxShadow: [BoxShadow(color: AppTheme.primaryColor.withOpacity(0.15), blurRadius: 24)],
+                          gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [AppTheme.primaryColor.withValues(alpha: 0.4), const Color(0xFF2DD4BF).withValues(alpha: 0.3)]),
+                          boxShadow: [BoxShadow(color: AppTheme.primaryColor.withValues(alpha: 0.15), blurRadius: 24)],
                         ),
                         child: Container(
                           margin: const EdgeInsets.all(36),
-                          decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: Colors.white.withOpacity(0.3)), color: Colors.white.withOpacity(0.1)),
+                          decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: Colors.white.withValues(alpha: 0.3)), color: Colors.white.withValues(alpha: 0.1)),
                           child: const Center(child: Text('Breathe', style: TextStyle(color: Colors.white, fontSize: 12, letterSpacing: 2, fontWeight: FontWeight.w300))),
                         ),
                       ),
@@ -116,7 +116,7 @@ class _MeditationPlayerScreenState extends State<MeditationPlayerScreen> {
                           onTap: () => setState(() => _isPlaying = !_isPlaying),
                           child: Container(
                             width: 72, height: 72,
-                            decoration: BoxDecoration(shape: BoxShape.circle, color: AppTheme.primaryColor, boxShadow: [BoxShadow(color: AppTheme.primaryColor.withOpacity(0.3), blurRadius: 16, offset: const Offset(0, 4))]),
+                            decoration: BoxDecoration(shape: BoxShape.circle, color: AppTheme.primaryColor, boxShadow: [BoxShadow(color: AppTheme.primaryColor.withValues(alpha: 0.3), blurRadius: 16, offset: const Offset(0, 4))]),
                             child: Icon(_isPlaying ? Icons.pause : Icons.play_arrow, size: 36, color: Colors.white),
                           ),
                         ),

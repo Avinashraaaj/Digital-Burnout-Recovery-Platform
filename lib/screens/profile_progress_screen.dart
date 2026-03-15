@@ -4,10 +4,9 @@ import '../providers/app_provider.dart';
 import '../utils/app_theme.dart';
 import '../widgets/weekly_bar_chart.dart';
 import '../widgets/achievement_badge.dart';
-import '../providers/auth_provider.dart';
 
 class ProfileProgressScreen extends StatelessWidget {
-  const ProfileProgressScreen({Key? key}) : super(key: key);
+  const ProfileProgressScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +32,6 @@ class ProfileProgressScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  IconButton(
-                    icon: Icon(Icons.logout, color: AppTheme.danger),
-                    onPressed: () {
-                      context.read<AuthProvider>().signOut();
-                    },
-                    tooltip: 'Log Out',
-                  ),
                 ],
               ),
             ),
@@ -57,9 +49,9 @@ class ProfileProgressScreen extends StatelessWidget {
                         height: 120,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppTheme.primaryColor.withOpacity(0.1),
+                          color: AppTheme.primaryColor.withValues(alpha: 0.1),
                           border: Border.all(
-                            color: AppTheme.primaryColor.withOpacity(0.2),
+                            color: AppTheme.primaryColor.withValues(alpha: 0.2),
                             width: 4,
                           ),
                         ),
@@ -183,7 +175,7 @@ class ProfileProgressScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: isDark ? const Color(0xFF1E293B) : Colors.white,
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: AppTheme.primaryColor.withOpacity(0.05)),
+                      border: Border.all(color: AppTheme.primaryColor.withValues(alpha: 0.05)),
                     ),
                     child: const WeeklyBarChart(
                       values: [40, 60, 35, 80, 95, 50, 25],
@@ -275,7 +267,7 @@ class ProfileProgressScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppTheme.primaryColor.withOpacity(0.05)),
+        border: Border.all(color: AppTheme.primaryColor.withValues(alpha: 0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

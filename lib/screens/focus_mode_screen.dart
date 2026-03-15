@@ -7,7 +7,7 @@ import '../utils/formatters.dart';
 import '../utils/constants.dart';
 
 class FocusModeScreen extends StatelessWidget {
-  const FocusModeScreen({Key? key}) : super(key: key);
+  const FocusModeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -142,7 +142,7 @@ class FocusModeScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               elevation: 4,
-                              shadowColor: AppTheme.primaryColor.withOpacity(0.4),
+                              shadowColor: AppTheme.primaryColor.withValues(alpha: 0.4),
                             ),
                           ),
                         ),
@@ -168,7 +168,7 @@ class FocusModeScreen extends StatelessWidget {
                               ),
                             ),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: AppTheme.primaryColor.withOpacity(0.15),
+                              backgroundColor: AppTheme.primaryColor.withValues(alpha: 0.15),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -217,7 +217,7 @@ class FocusModeScreen extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
-                          color: AppTheme.danger.withOpacity(0.1),
+                          color: AppTheme.danger.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(
@@ -266,7 +266,7 @@ class FocusModeScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppTheme.primaryColor.withOpacity(0.05)),
+        border: Border.all(color: AppTheme.primaryColor.withValues(alpha: 0.05)),
       ),
       child: Row(
         children: [
@@ -310,7 +310,7 @@ class _TimerRingPainter extends CustomPainter {
 
     // Background ring
     final bgPaint = Paint()
-      ..color = AppTheme.primaryColor.withOpacity(0.1)
+      ..color = AppTheme.primaryColor.withValues(alpha: 0.1)
       ..strokeWidth = strokeWidth
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;

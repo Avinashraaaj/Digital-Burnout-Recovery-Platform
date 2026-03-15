@@ -7,12 +7,12 @@ class AchievementBadge extends StatelessWidget {
   final bool isUnlocked;
 
   const AchievementBadge({
-    Key? key,
+    super.key,
     required this.icon,
     required this.label,
     required this.color,
     this.isUnlocked = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +34,11 @@ class AchievementBadge extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: isUnlocked
-                      ? color.withOpacity(isDark ? 0.2 : 0.1)
+                      ? color.withValues(alpha: isDark ? 0.2 : 0.1)
                       : (isDark ? const Color(0xFF334155) : const Color(0xFFF1F5F9)),
                   border: Border.all(
                     color: isUnlocked
-                        ? color.withOpacity(0.2)
+                        ? color.withValues(alpha: 0.2)
                         : (isDark ? const Color(0xFF475569) : const Color(0xFFE2E8F0)),
                     width: 2,
                   ),

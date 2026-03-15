@@ -8,11 +8,11 @@ class CircularProgressWidget extends StatelessWidget {
   final String labelText;
 
   const CircularProgressWidget({
-    Key? key,
+    super.key,
     required this.percentage,
     required this.centerText,
     required this.labelText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

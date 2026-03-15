@@ -8,7 +8,7 @@ import '../widgets/circular_progress_widget.dart';
 import '../widgets/metric_card.dart';
 
 class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+  const DashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,8 @@ class DashboardScreen extends StatelessWidget {
                         height: 48,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppTheme.primaryColor.withOpacity(0.2),
-                          border: Border.all(color: AppTheme.primaryColor.withOpacity(0.1), width: 2),
+                          color: AppTheme.primaryColor.withValues(alpha: 0.2),
+                          border: Border.all(color: AppTheme.primaryColor.withValues(alpha: 0.1), width: 2),
                           image: const DecorationImage(
                             image: NetworkImage('https://lh3.googleusercontent.com/aida-public/AB6AXuApA672DuB-ReyqGV-iMnLuefbKLhUWbyJGdJ6-pg2vnTwBW-YZODY4MrwtDO1d-MLHC4eei3vRjwO3FqrpZOV2E7hDnNNONRwve3T0yeM6ai35CuP68ang117Aknxi71k6a64lu8tDB1trQyAiuvKM9RQHJMHD6Ycj9PRgSaTX11Mgq5c4nFFVirBA5bQQUtFJV1NesU0kpwA_PNwzBuxy3aQJhBDyzB6jmTdDW01vFZcgWabv_4WfCZgIMISDjcWyCNO_1qh0kb4'),
                             fit: BoxFit.cover,
@@ -99,7 +99,7 @@ class DashboardScreen extends StatelessWidget {
                             Container(
                               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                               decoration: BoxDecoration(
-                                color: AppTheme.primaryColor.withOpacity(0.1),
+                                color: AppTheme.primaryColor.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               child: Text(
@@ -224,7 +224,7 @@ class DashboardScreen extends StatelessWidget {
                   _buildInsightItem(
                     context,
                     icon: Icons.bedtime,
-                    iconBgColor: Colors.blue.withOpacity(0.1),
+                    iconBgColor: Colors.blue.withValues(alpha: 0.1),
                     iconColor: Colors.blue,
                     title: 'Sleep Quality',
                     subtitle: 'Based on last night',
@@ -234,7 +234,7 @@ class DashboardScreen extends StatelessWidget {
                   _buildInsightItem(
                     context,
                     icon: Icons.psychology,
-                    iconBgColor: Colors.purple.withOpacity(0.1),
+                    iconBgColor: Colors.purple.withValues(alpha: 0.1),
                     iconColor: Colors.purple,
                     title: 'Focus Deep Work',
                     subtitle: 'Uninterrupted blocks',
