@@ -4,6 +4,7 @@ import '../providers/app_provider.dart';
 import '../utils/app_theme.dart';
 import '../widgets/weekly_bar_chart.dart';
 import '../widgets/achievement_badge.dart';
+import '../providers/auth_provider.dart';
 
 class ProfileProgressScreen extends StatelessWidget {
   const ProfileProgressScreen({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class ProfileProgressScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Row(
                 children: [
-                  Icon(Icons.settings, color: AppTheme.primaryColor),
+                  const SizedBox(width: 24), // Spacer to center title
                   const Expanded(
                     child: Center(
                       child: Text(
@@ -32,7 +33,13 @@ class ProfileProgressScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Icon(Icons.share, color: AppTheme.primaryColor),
+                  IconButton(
+                    icon: Icon(Icons.logout, color: AppTheme.danger),
+                    onPressed: () {
+                      context.read<AuthProvider>().signOut();
+                    },
+                    tooltip: 'Log Out',
+                  ),
                 ],
               ),
             ),
